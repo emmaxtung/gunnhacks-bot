@@ -14,4 +14,12 @@ async def remove(ctx, amount=0):
     channel = client.get_channel(810409079481696299)
     await channel.send(str(amount) + " messages were removed.")
 
-client.run("DISCORD_TOKEN")
+@client.event
+async def on_message(message):
+    blacklist = ["frick", "frickers", "motherfrickers", "motherfrick", "dang", "darn", "damn", "heck", "crap", "shizzle", "fudge"]
+    for word in blacklist:
+        if(word in message.content):
+            await message.delete()
+    await client.process_commands(message)
+
+client.run("SECRET TOKEN")
