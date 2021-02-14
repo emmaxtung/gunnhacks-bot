@@ -64,4 +64,4 @@ def getRandomMessage(user_id):
     reply = reply.format(user_id)
     return reply
 
-client.run("ODEwNDA4NjExNTczNjYxNzI2.YCjN1Q.HE7qkKrlww6TpIy5LSUsJhiH_eE")
+client.run("SECRET TOKEN")
