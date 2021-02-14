@@ -36,6 +36,13 @@ async def delWord(ctx, word):
 async def wordList(ctx):
     await ctx.author.send("The blacklisted words are: " + str(blacklist))
 
+#sents list of commands to user
+@client.command(pass_context=True)
+async def commands(ctx):
+    await ctx.author.send("The commands offered are: \n!addWord (word) - adds desired word to the blacklist \n!delWord (word) - removes desired word from the blacklist\n"
+                          "!wordList - presents the list of words blacklisted\n"
+                          "!remove (#) - removes desired number of messages from the chat\n!commands - provides the list of available commands")
+
 #check to see if one of the blacklisted words is found in a user's message, and if so it will be removed
 @client.event
 async def on_message(message):
